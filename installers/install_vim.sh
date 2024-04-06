@@ -10,3 +10,6 @@ sudo mv nvim.appimage /opt/nvim/nvim
 rm -rf ~/.local/share/nvim/
 rm -rf ~/.config/nvim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+rm -rf ~/.config/nvim/.git
+rm -rf ~/.config/nvim/.github
+rm -rf ~/.config/nvim/.gitignore
