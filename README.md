@@ -13,6 +13,10 @@ cd ~
 git clone --single-branch --branch main --bare https://github.com/51616/dotfiles.git $HOME/.dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
+
+mkdir -p .dotfiles-backup && \
+dotfiles checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | \
+xargs -I{} mv {} .dotfiles-backup/{}
 dotfiles checkout
 ```
 
@@ -39,5 +43,12 @@ system font
 - droid sans fallback
 
 mouse icon
+
 - breeze
+
+
+based on
+
+- https://www.atlassian.com/git/tutorials/dotfiles
+- https://mitxela.com/projects/dotfiles_management
 
