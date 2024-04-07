@@ -1,14 +1,14 @@
 # Dotfiles
 
 install everything
-```
+```bash
 cd ~
 git clone --depth 1 https://github.com/51616/kickstart.git $HOME/.kickstart
 . .kickstart/installers/install.sh
 ```
 
 dotfiles
-```
+```bash
 cd ~
 git clone --single-branch --branch main --bare https://github.com/51616/dotfiles.git $HOME/.dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
