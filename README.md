@@ -20,6 +20,10 @@ xargs -I{} mv {} .dotfiles-backup/{}
 dotfiles checkout
 ```
 
+xfce4 terminal $TERM
+
+- https://bbs.archlinux.org/viewtopic.php?pid=1376408#p1376408
+
 see also
 
 - https://www.warp.dev/

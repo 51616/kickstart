@@ -1,5 +1,5 @@
 #!/bin/bash
-# chezmoi should handle this
+# just in case we need to run symlink
 # ./install_symlink_config.sh
 
 ./install_packages.sh
