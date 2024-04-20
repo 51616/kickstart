@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt update
 sudo apt install git tree wget zip cmake build-essential htop net-tools -y
-sudo apt install stow zsh tmux curl openssh-server sshfs gpg jq python3 -y
+sudo apt install zsh tmux curl openssh-server sshfs gpg jq python3 shellcheck -y
 sudo apt install ffmpeg openmpi-bin openmpi-common openmpi-doc libopenmpi-dev -y
 sudo apt install libfreetype6-dev libevent-dev ncurses-dev bison pkg-config -y
 sudo apt install libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
@@ -21,7 +21,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # eza
 sudo mkdir -p /etc/apt/keyrings
-wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc \ 
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc \
 | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
 echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" \
 | sudo tee /etc/apt/sources.list.d/gierens.list
