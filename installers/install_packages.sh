@@ -6,7 +6,6 @@ sudo apt install ffmpeg openmpi-bin openmpi-common openmpi-doc libopenmpi-dev -y
 sudo apt install libfreetype6-dev libevent-dev ncurses-dev bison pkg-config -y
 sudo apt install libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
 
-sudo snap install discord btop
 
 # zoxide
 # curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh \
