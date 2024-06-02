@@ -63,6 +63,7 @@ curl -s https://api.github.com/repos/dandavison/delta/releases/latest \
 | grep "browser_download_url.*musl.*amd.*.*deb" \
 | cut -d : -f 2,3 | tr -d \" | wget -qi -
 sudo dpkg -i git-delta*.deb
+rm git-delta*.deb
 
 # clone theme for delta
 # the theme config is set in .gitconfig
@@ -73,31 +74,11 @@ LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/re
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
+rm -rf lazygit.tar.gz lazygit
+
 
 # rust
 # curl https://sh.rustup.rs -sSf | sh
 
 # alacritty
 # cargo install alacritty
-
-# pipx and rich-cli
-# for ubuntu 18
-# sudo apt-get install python3.8 python3-pip python3.8-venv -y
-# python3.8 -m pip install --user pipx
-# python3.8 -m pipx ensurepath
-# python3.8 -m pipx install rich-cli
-# python3.8 -m pipx inject rich-cli Pygments
-
-# for ubuntu 20-22
-# python3 -m pip install --user pipx
-# python3 -m pipx ensurepath
-
-# TODO: to be moved
-sudo apt install pipx
-pipx ensurepath
-# sudo pipx ensurepath --global # Ubuntu 23+
-pipx install rich-cli
-pipx install gdown
-pipx install tldr
-pipx install yt-dlp
-

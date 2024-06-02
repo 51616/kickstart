@@ -19,8 +19,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/th
 # fast-theme XDG:catppuccin-mocha
 # cd -
 
-if command -v conda >/dev/null 2>&1; then
-  conda init zsh
-fi 
+# if command -v conda >/dev/null 2>&1; then
+#   conda init zsh
+# fi
 
 zsh
