@@ -4,7 +4,7 @@ sudo apt install git tree wget zip cmake build-essential htop net-tools -y
 sudo apt install zsh tmux curl openssh-server sshfs gpg jq python3 shellcheck -y
 sudo apt install ffmpeg openmpi-bin openmpi-common openmpi-doc libopenmpi-dev -y
 sudo apt install libfreetype6-dev libevent-dev ncurses-dev bison pkg-config -y
-sudo apt install libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
+sudo apt install libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev libfuse2 -y
 
 
 # zoxide
@@ -28,6 +28,7 @@ sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.lis
 sudo apt update
 sudo apt install -y eza
 
+# TODO: to be moved
 # gh
 sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
 && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
@@ -35,14 +36,20 @@ sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packa
 && sudo apt update \
 && sudo apt install gh -y
 
+# TODO: to be moved
 # gh copilot
 gh auth login --web -h github.com
 gh extension install github/gh-copilot --force
 
+
 # bat
-sudo apt install bat
+
+sudo apt install bat -y
 mkdir -p ~/.local/bin
+rm ~/.local/bin/bat
 ln -s /usr/bin/batcat ~/.local/bin/bat
+source ~/.bashrc
+export PATH="$PATH:~/.local/bin"
 
 # theme fot bat
 mkdir -p "$(bat --config-dir)/themes"
@@ -82,8 +89,13 @@ sudo install lazygit /usr/local/bin
 # python3.8 -m pipx inject rich-cli Pygments
 
 # for ubuntu 20-22
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
+# python3 -m pip install --user pipx
+# python3 -m pipx ensurepath
+
+# TODO: to be moved
+sudo apt install pipx
+pipx ensurepath
+# sudo pipx ensurepath --global # Ubuntu 23+
 pipx install rich-cli
 pipx install gdown
 pipx install tldr

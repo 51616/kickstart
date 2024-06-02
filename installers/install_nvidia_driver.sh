@@ -1,3 +1,3 @@
 #!/bin/bash
 ubuntu-drivers devices
-sudo apt install nvidia-driver-520
+sudo apt install nvidia-driver-535
