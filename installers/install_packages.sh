@@ -38,6 +38,7 @@ sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packa
 
 # TODO: to be moved
 # gh copilot
+# https://github.com/login/device
 gh auth login --web -h github.com
 gh extension install github/gh-copilot --force
 
