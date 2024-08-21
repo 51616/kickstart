@@ -5,7 +5,7 @@ install everything
 cd ~
 git clone --depth 1 https://github.com/51616/kickstart.git $HOME/.kickstart
 cd .kickstart/installers
-./install.sh
+./install0.sh
 ```
 
 dotfiles
