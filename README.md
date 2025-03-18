@@ -17,7 +17,20 @@ dotfiles config --local status.showUntrackedFiles no
 
 mkdir -p .dotfiles-backup && \
 dotfiles checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | \
-xargs -I{} mv {} .dotfiles-backup/{}
+while read -r file; do
+  if [ ! -e "$file" ]; then
+    echo "Warning: File '$file' not found. Skipping." >&2
+    continue
+  fi
+
+  # Create the destination directory if it doesn't exist
+  dest_dir=".dotfiles-backup/$(dirname "$file")"
+  mkdir -p "$dest_dir"
+
+  # Move the file
+  mv "$file" ".dotfiles-backup/$file"
+done
+
 dotfiles checkout
 ```
 
