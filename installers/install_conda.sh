@@ -4,6 +4,6 @@ bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda update -n base conda
 conda install -n base python=3.11
-conda install -n base conda-libmamba-solver
-conda config --set solver libmamba
+# conda install -n base conda-libmamba-solver
+# conda config --set solver libmamba
 rm Miniconda3-latest-Linux-x86_64.sh
