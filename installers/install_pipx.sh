@@ -11,10 +11,9 @@
 # python3 -m pip install --user pipx
 # python3 -m pipx ensurepath
 
-# TODO: to be moved
+sudo apt update
 sudo apt install pipx
 pipx ensurepath
-# sudo pipx ensurepath --global # Ubuntu 23+
 pipx install rich-cli
 pipx install gdown
 pipx install tldr
