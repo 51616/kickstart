@@ -34,6 +34,21 @@ done
 dotfiles checkout
 ```
 
+making zsh default (test), adding this to `~/.bash_profile`
+```bash
+[ -f $HOME/bin/zsh ] && {
+    echo "Type Y to run zsh: \c"
+    read line
+    [ "$line" = Y ] && exec $HOME/.local/bin/zsh -l
+}
+```
+
+actually make it a default, adding this to `~/.bash_profile`
+```bash
+export SHELL=~/bin/zsh
+exec ~/bin/zsh -l
+```
+
 xfce4 terminal $TERM
 
 - https://bbs.archlinux.org/viewtopic.php?pid=1376408#p1376408
