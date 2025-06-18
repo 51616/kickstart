@@ -33,6 +33,18 @@ mv bat-v0.25.0-x86_64-unknown-linux-gnu/bat ~/.local/bin/bat
 rm -rf bat-v0.25.0-x86_64-unknown-linux-gnu/
 rm bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz
 
+# gh
+wget https://github.com/cli/cli/releases/download/v2.74.1/gh_2.74.1_linux_386.tar.gz
+tar -xvf gh_2.74.1_linux_386.tar.gz
+mv gh_2.74.1_linux_386/bin/gh .local/bin/gh
+mv gh_2.74.1_linux_386/share/man/man1/* .local/share/man/man1/
+# login
+gh auth login --web -h github.com
+gh extension install github/gh-copilot --force
+
+# eza
+wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+mv eza ~/.local/bin/
 
 # zsh
 # from https://gist.github.com/ZhaofengWu/f345652e994e3b68c309352a7610460f
@@ -60,4 +72,5 @@ echo -e "export SHELL=~/bin/zsh\nexec ~/bin/zsh -l" >> ~/.bash_profile # or chsh
 
 # oh my zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
 
