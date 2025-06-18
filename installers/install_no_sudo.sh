@@ -7,6 +7,14 @@ chmod u+x nvim-linux-x86_64.appimage
 ./nvim-linux-x86_64.appimage
 mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 
+# base nvchad config
+rm -rf ~/.local/share/nvim/
+rm -rf ~/.config/nvim
+git clone https://github.com/NvChad/starter ~/.config/nvim/ --depth 1 && nvim
+rm -rf ~/.config/nvim/.git
+rm -rf ~/.config/nvim/.github
+rm -rf ~/.config/nvim/.gitignore
+
 # nerd fonts
 fonts_to_install=("FiraCode" "FiraMono" "Ubuntu" "UbuntuMono")
 git clone --sparse --depth=1 --filter=blob:none https://github.com/ryanoasis/nerd-fonts.git
