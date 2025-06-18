@@ -34,12 +34,19 @@ tar -xvf delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz
 mv delta-0.18.2-x86_64-unknown-linux-gnu/delta ~/.local/bin/delta
 rm -rf delta-0.18.2-x86_64-unknown-linux-gnu/
 rm delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz
+# delta theme
+git clone https://github.com/catppuccin/delta.git ~/.config/delta
 
 # bat
 wget -c https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
 mv bat-v0.25.0-x86_64-unknown-linux-gnu/bat ~/.local/bin/bat
 mv bat-v0.25.0-x86_64-unknown-linux-gnu/bat.1 ~/.local/share/man/man1/bat.1
 rm -rf bat-v0.25.0-x86_64-unknown-linux-gnu/
+# bat theme
+mkdir -p "$(bat --config-dir)/themes"
+wget -P "$(bat --config-dir)/themes" \
+https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
+bat cache --build
 
 # gh
 wget https://github.com/cli/cli/releases/download/v2.74.1/gh_2.74.1_linux_386.tar.gz
