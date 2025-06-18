@@ -9,11 +9,11 @@ mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 
 # nerd fonts
 fonts_to_install=("FiraCode" "FiraMono" "Ubuntu" "UbuntuMono")
-
 git clone --sparse --depth=1 --filter=blob:none https://github.com/ryanoasis/nerd-fonts.git
 cd nerd-fonts
 # Add the fonts to install to the sparse-checkout
 git sparse-checkout add $(printf "patched-fonts/%s " "${fonts_to_install[@]}")
+
 
 ./install.sh "${fonts_to_install[@]}"
 cd ..
@@ -28,10 +28,10 @@ rm -rf delta-0.18.2-x86_64-unknown-linux-gnu/
 rm delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz
 
 # bat
-wget https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz
+wget -c https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
 mv bat-v0.25.0-x86_64-unknown-linux-gnu/bat ~/.local/bin/bat
+mv bat-v0.25.0-x86_64-unknown-linux-gnu/bat.1 ~/.local/share/man/man1/bat.1
 rm -rf bat-v0.25.0-x86_64-unknown-linux-gnu/
-rm bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz
 
 # gh
 wget https://github.com/cli/cli/releases/download/v2.74.1/gh_2.74.1_linux_386.tar.gz
@@ -73,4 +73,6 @@ echo -e "export SHELL=~/bin/zsh\nexec ~/bin/zsh -l" >> ~/.bash_profile # or chsh
 # oh my zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
+# powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 
