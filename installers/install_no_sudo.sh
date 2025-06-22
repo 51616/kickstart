@@ -35,7 +35,7 @@ mv delta-0.18.2-x86_64-unknown-linux-gnu/delta ~/.local/bin/delta
 rm -rf delta-0.18.2-x86_64-unknown-linux-gnu/
 rm delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz
 # delta theme
-git clone https://github.com/catppuccin/delta.git ~/.config/delta
+git clone https://github.com/catppuccin/delta.git ~/.config/delta/themes/catppuccin
 
 # bat
 wget -c https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
