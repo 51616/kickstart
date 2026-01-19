@@ -48,6 +48,13 @@ wget -P "$(bat --config-dir)/themes" \
 https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme
 bat cache --build
 
+# lnav
+wget https://github.com/tstack/lnav/releases/download/v0.13.2/lnav-0.13.2-linux-musl-x86_64.zip
+unzip lnav-0.13.2-linux-musl-x86_64.zip
+mv lnav-0.13.2/lnav ~/.local/bin/lnav
+mv lnav-0.13.2/lnav.1 ~/.local/bin/lnav.1
+rm -rf lnav-0.13.2
+
 # gh
 wget https://github.com/cli/cli/releases/download/v2.74.1/gh_2.74.1_linux_386.tar.gz
 tar -xvf gh_2.74.1_linux_386.tar.gz
