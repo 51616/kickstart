@@ -17,7 +17,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
-./nvim-linux-x86_64.appimage
 mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
 
 # base nvchad config
@@ -34,8 +33,6 @@ git clone --sparse --depth=1 --filter=blob:none https://github.com/ryanoasis/ner
 cd nerd-fonts
 # Add the fonts to install to the sparse-checkout
 git sparse-checkout add $(printf "patched-fonts/%s " "${fonts_to_install[@]}")
-
-
 ./install.sh "${fonts_to_install[@]}"
 cd ..
 rm -rf nerd-fonts
@@ -51,10 +48,11 @@ rm delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz
 git clone https://github.com/catppuccin/delta.git ~/.config/delta/themes/catppuccin
 
 # bat
-wget -c https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
-mv bat-v0.25.0-x86_64-unknown-linux-gnu/bat ~/.local/bin/bat
-mv bat-v0.25.0-x86_64-unknown-linux-gnu/bat.1 ~/.local/share/man/man1/bat.1
-rm -rf bat-v0.25.0-x86_64-unknown-linux-gnu/
+# TODO: fix hardcode file name
+wget -c https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+mv bat-v0.26.1-x86_64-unknown-linux-gnu/bat ~/.local/bin/bat
+mv bat-v0.26.1-x86_64-unknown-linux-gnu/bat.1 ~/.local/share/man/man1/bat.1
+rm -rf bat-v0.26.1-x86_64-unknown-linux-gnu/
 # bat theme
 mkdir -p "$(bat --config-dir)/themes"
 wget -P "$(bat --config-dir)/themes" \
@@ -69,10 +67,10 @@ mv lnav-0.13.2/lnav.1 ~/.local/bin/lnav.1
 rm -rf lnav-0.13.2
 
 # gh
-wget https://github.com/cli/cli/releases/download/v2.74.1/gh_2.74.1_linux_386.tar.gz
-tar -xvf gh_2.74.1_linux_386.tar.gz
-mv gh_2.74.1_linux_386/bin/gh .local/bin/gh
-mv gh_2.74.1_linux_386/share/man/man1/* .local/share/man/man1/
+wget https://github.com/cli/cli/releases/download/v2.87.3/gh_2.87.3_linux_386.tar.gz
+tar -xvf gh_2.87.3_linux_386.tar.gz
+mv gh_2.87.3_linux_386/bin/gh .local/bin/gh
+mv gh_2.87.3_linux_386/share/man/man1/* .local/share/man/man1/
 # login
 gh auth login --web -h github.com
 gh extension install github/gh-copilot --force
@@ -110,6 +108,3 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 
 # powerlevel10k
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
-
-source ~/.zshrc
-zsh
