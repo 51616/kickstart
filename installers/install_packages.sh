@@ -1,7 +1,7 @@
 #!/bin/bash
-add-apt-repository ppa:git-core/ppa
+sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt update
-sudo apt install git --upgrade
+sudo apt install git --upgrade -y
 sudo apt install tree wget zip cmake build-essential htop net-tools -y
 sudo apt install zsh tmux curl openssh-server sshfs gpg jq python3 shellcheck -y
 sudo apt install ffmpeg openmpi-bin openmpi-common openmpi-doc libopenmpi-dev -y
