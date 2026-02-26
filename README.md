@@ -15,7 +15,7 @@ git clone --single-branch --branch main --bare https://github.com/51616/dotfiles
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
 
-mkdir -p .dotfiles-backup && \
+mkdir -p .dotfiles-backup
 dotfiles checkout 2>&1 | egrep "^\s+" | awk {'print $1'} | \
 while read -r file; do
   if [ ! -e "$file" ]; then
@@ -32,6 +32,11 @@ while read -r file; do
 done
 
 dotfiles checkout
+```
+
+Install oh my posh
+```
+curl -s https://ohmyposh.dev/install.sh | bash -s
 ```
 
 making zsh default (test), adding this to `~/.bash_profile`
