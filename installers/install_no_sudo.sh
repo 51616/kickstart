@@ -1,6 +1,19 @@
 # uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# pipx
+pip install --user pipx
+pipx ensurepath
+pipx install rich-cli
+pipx install gdown
+pipx install tldr
+pipx install yt-dlp
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/uninstall
+~/.fzf/install
+
 # nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
@@ -96,8 +109,7 @@ cd .. && rm zsh.tar && rm -r zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 
-zsh
-~/.fzf/install
 source ~/.zshrc
+zsh
