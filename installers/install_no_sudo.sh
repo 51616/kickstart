@@ -9,6 +9,11 @@ pipx install gdown
 pipx install tldr
 pipx install yt-dlp
 
+# nvm
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+nvm install node
+nvm use node
+
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/uninstall
