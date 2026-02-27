@@ -1,3 +1,6 @@
+mkdir -p ~/.local/bin
+mkdir -p ~/.local/share/man/man1/
+
 # uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
@@ -74,8 +77,8 @@ rm -rf lnav-0.13.2
 # gh
 wget https://github.com/cli/cli/releases/download/v2.87.3/gh_2.87.3_linux_386.tar.gz
 tar -xvf gh_2.87.3_linux_386.tar.gz
-mv gh_2.87.3_linux_386/bin/gh .local/bin/gh
-mv gh_2.87.3_linux_386/share/man/man1/* .local/share/man/man1/
+mv gh_2.87.3_linux_386/bin/gh ~/.local/bin/gh
+mv gh_2.87.3_linux_386/share/man/man1/* ~/.local/share/man/man1/
 # login
 gh auth login --web -h github.com
 gh extension install github/gh-copilot --force
@@ -110,6 +113,9 @@ cd .. && rm zsh.tar && rm -r zsh
 
 # oh my zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+# oh my posh
+curl -s https://ohmyposh.dev/install.sh | bash -s
 
 # powerlevel10k
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
