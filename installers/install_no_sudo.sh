@@ -17,6 +17,15 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 nvm install node
 nvm use node
 
+# bun
+curl -fsSL https://bun.com/install | bash
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# rg
+cargo install ripgrep
+
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/uninstall
