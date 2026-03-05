@@ -93,7 +93,7 @@ mv gh_2.87.3_linux_386/bin/gh ~/.local/bin/gh
 mv gh_2.87.3_linux_386/share/man/man1/* ~/.local/share/man/man1/
 # login
 gh auth login --web -h github.com
-gh extension install github/gh-copilot --force
+gh extension install github/gh-aw
 
 # eza
 wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
