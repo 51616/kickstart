@@ -57,6 +57,12 @@ git sparse-checkout add $(printf "patched-fonts/%s " "${fonts_to_install[@]}")
 cd ..
 rm -rf nerd-fonts
 
+# glow
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+sudo apt update && sudo apt install glow
+
 # delta
 # TODO: fix hardcode file name
 wget https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz
