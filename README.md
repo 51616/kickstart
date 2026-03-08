@@ -43,10 +43,6 @@ done
 dotfiles checkout
 ```
 
-Install oh my posh
-```
-curl -s https://ohmyposh.dev/install.sh | bash -s
-```
 
 making zsh default (test), adding this to `~/.bash_profile`
 ```bash
