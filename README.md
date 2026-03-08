@@ -4,8 +4,17 @@ install everything
 ```bash
 cd ~
 git clone --depth 1 https://github.com/51616/kickstart.git $HOME/.kickstart
-cd .kickstart/installers
-./install0.sh
+
+# install everything
+.kickstart/installers/install0.sh
+
+# install sudo packages
+.kickstart/installers/install_packages.sh
+
+# install no-sudo tools
+.kickstart/installers/install_no_sudo.sh
+
+rm -rf .kickstart
 ```
 
 dotfiles
