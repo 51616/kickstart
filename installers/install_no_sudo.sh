@@ -58,10 +58,12 @@ cd ..
 rm -rf nerd-fonts
 
 # glow
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-sudo apt update && sudo apt install glow
+wget https://github.com/charmbracelet/glow/releases/download/v2.1.1/glow_2.1.1_Linux_x86_64.tar.gz
+tar -xvf glow_2.1.1_Linux_x86_64.tar.gz
+mv glow_2.1.1_Linux_x86_64/glow ~/.local/bin/glow
+rm -rf glow_2.1.1_Linux_x86_64
+rm glow_2.1.1_Linux_x86_64.tar.gz
+
 
 # delta
 # TODO: fix hardcode file name
