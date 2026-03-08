@@ -35,6 +35,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # nvim
+# use curl -LO https://github.com/neovim/neovim-releases/releases/latest/download/nvim-linux-x86_64.appimage
+# instead for older system (e.g., Ubuntu < 22)
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
 mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
