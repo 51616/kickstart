@@ -1,6 +1,11 @@
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share/man/man1/
 
+# tmux
+https://github.com/tmux/tmux-builds/releases/download/v3.6a/tmux-3.6a-linux-x86_64.tar.gz
+tar -xzf /tmux-3.6a-linux-x86_64.tar.gz
+mv tmux ~/.local/bin/tmux
+
 # uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
